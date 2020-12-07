@@ -122,8 +122,9 @@ const winConditions = () => {
 const restartGame = () => {
     const timerContainer = document.querySelector('.time__display');
     timerContainer.textContent = '00:00';
-    backFlip()
+    backFlip();
     clearInterval(timer);
+    playTheGame();
 };
 
 playTheGame()
