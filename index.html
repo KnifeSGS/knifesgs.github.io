@@ -1,13 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Cinema</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="styles.59aef4b0229417bebb78.css"></head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roman Numerals Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-  <app-root></app-root>
-<script src="runtime.7b63b9fd40098a2e8207.js" defer></script><script src="polyfills.94daefd414b8355106ab.js" defer></script><script src="main.bcfedc9b21339c9ad765.js" defer></script></body>
+
+  <div class="main-container">
+    <div class="content-container">
+      <h1>Roman Numerals converter</h1>
+      <input type="text" class="input" id="rom"
+        pattern="^(?=[MDCLXVI])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$">
+      <label for="rom">Please use legal format!</label>
+      <button class="calc" onclick="printOutcome()">Calculate</button>
+      <div class="outcome"></div>
+      <div class="link">
+        <a href="https://github.com/KnifeSGS/knifesgs.github.io"
+          target="_blank">GitHub link</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
 </html>
