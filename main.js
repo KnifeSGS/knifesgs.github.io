@@ -15,27 +15,26 @@ const romanNumbers = {
 
 function calculate(inputRomanNum) {
   let outcome = 0;
-  let tmp1;
-  let tmp2;
+  let curr;
+  let next;
   for (let i = 0; i < inputRomanNum.length; i++) {
-    tmp1 = romanNumbers[inputRomanNum[i].toUpperCase()];
-    if (inputRomanNum[i - 1]) {
-      tmp2 = romanNumbers[inputRomanNum[i - 1].toUpperCase()];
-      if (tmp1 > tmp2) {
-        outcome -= tmp2 * 2;
-      }
-      outcome += tmp1;
+    curr = romanNumbers[inputRomanNum[i]];
+    next = romanNumbers[inputRomanNum[i + 1]];
+    if (next && next > curr) {
+      outcome -= curr;
     } else {
-      outcome += tmp1
+      outcome += curr
     }
   }
   return outcome
 }
 
 function printOutcome() {
-  if (inputNum.checkValidity()) {
-    outcome.innerHTML = calculate(inputNum.value)
-  } else {
-    outcome.innerHTML = inputNum.validationMessage;
-  }
+  inputNum.value = inputNum.value.toUpperCase()
+  outcome.innerHTML = calculate(inputNum.value)
+  // if (inputNum.checkValidity()) {
+  //   outcome.innerHTML = calculate(inputNum.value.toUpperCase())
+  // } else {
+  //   outcome.innerHTML = inputNum.validationMessage;
+  // }
 }
